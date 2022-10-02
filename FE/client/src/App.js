@@ -60,7 +60,6 @@ function App() {
         setIsLoading(false);
       });
   }, [type]);
-  useEffect(() => {});
 
   const logout = () => {
     setIsLoading(true);

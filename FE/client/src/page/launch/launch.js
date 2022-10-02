@@ -1,6 +1,6 @@
 import React from "react";
 import Analytics from "./components/Analytics";
-import Cards from "./components/Cards";
+import TheCards from "./components/TheCards";
 import Three from "./components/three";
 import { Layout } from "antd";
 import FooterBar from "../../component/footerBar";
@@ -11,7 +11,7 @@ const Launch = ({ setIsLanding }) => {
   return (
     <div className="black">
       <Three setLanding={setIsLanding} />
-      <Cards />
+      <TheCards />
       <div
         style={{
           backgroundColor: "#EEE",

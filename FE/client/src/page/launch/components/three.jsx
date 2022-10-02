@@ -52,6 +52,12 @@ export default function Three() {
         <p className="text-[#0efcfe] my-3 px-3" style={{fontSize:"20px",fontWeight:500}}>
           모든 인증서를 빠르고, 쉽고, 그리고 안전하게
         </p>
+        <Link to="/home">
+          <button className="absolute left-15 z-10 bg-[#0efcfe] w-[200px] rounded-md font-medium my-6 py-3 text-black">
+            Get Started
+          </button>
+        </Link>
+        <p>""</p>
         <h1 className="mt-20 text-white md:text-4xl sm:text-3xl text-2xl font-bold">
           Manage your Certificate
         </h1>
@@ -68,17 +74,19 @@ export default function Three() {
             typeSpeed={120}
             backSpeed={140}
             loop
-          />
+          />         
         </div>
         {/* <p className="md:text-base sm:text-sm mt-2 text-gray-500">
           블록체인 기반의 비정부기관 증명, 인증서 중개 플랫폼
         </p> */}
-
-        <Link to="/home">
-          <button className="absolute left-5 top-[80%] z-10 bg-[#0efcfe] w-[200px] rounded-md font-medium my-6 ml-5  py-3 text-black">
+        
+        {/* <Link className="absolute" to="/home">
+          <button className="absolute z-10 bg-[#0efcfe] w-[200px] rounded-md font-medium text-black">
             Get Started
           </button>
-        </Link>
+        </Link> */}
+        
+
       </div>
       {/* </div> */}
 
