@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom";
 import { Row, Col, Spin } from "antd";
-import homePicture from "../../img/homepage.jpg";
-import issuerPicture from "../../img/signin.jpg";
-import verifierPicture from "../../img/signup.jpg";
 import "./style/home.css";
 
 const Home = ({ isLoading, type }) => {
   return (
     <Spin spinning={isLoading} size="large">
-      <div className="home">
+      <div className=
+        //home 화면 배경 결정 및 배경 스타일 지정
+        {type === "" || type === "holder"
+        ? "homePictureAndHomeStyle"
+        : type === "issuer"
+        ? "issuerPictureAndHomeStyle"
+        : "verifierPictureAndHomeStyle"}
+      >
         <Row gutter={20}>
           <Col
             span={12}
@@ -47,7 +51,7 @@ const Home = ({ isLoading, type }) => {
                       style={{ color: "black", textDecoration: "underline" }}
                       to="/signin"
                     >
-                      {"📝 Get Started DID NOW!"}
+                      {"Get Started DID NOW!"}
                     </Link>
                   </li>
                 </>
@@ -110,7 +114,7 @@ const Home = ({ isLoading, type }) => {
               )}
             </ul>
           </Col>
-          <Col span={12} style={{ display: "flex", justifyContent: "right" }}>
+          {/* <Col span={12} style={{ display: "flex", justifyContent: "right" }}>
             <img
               className="main--picture"
               src={
@@ -122,7 +126,7 @@ const Home = ({ isLoading, type }) => {
               }
               alt=""
             />
-          </Col>
+          </Col> */}
         </Row>
       </div>
     </Spin>

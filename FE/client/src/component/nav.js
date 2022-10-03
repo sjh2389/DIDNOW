@@ -9,7 +9,7 @@ import {
 } from "@ant-design/icons";
 import "./style/nav.css";
 import { useEffect } from "react";
-import UpMenu from "../page/common/upMenu"
+import UpMenu from "./upMenu"
 
 /* 
   현재 에러가 있다고 나옵니다.
@@ -25,18 +25,19 @@ const Nav = ({ type, setType, user, setUser, logout }) => {
   };
 
   return (
-    <Row style={{justifyContent: "space-between"}} gutter={24}>
-      <Col>
+    <strong>
+      <Row style={{justifyContent: "space-between"}} gutter={24}>
+      <Col span={4}>
         <Link to="/home">
           <img src={logo} alt="" style={{ height: "64px" }} />
         </Link>
       </Col>
-      <Col>
+      <Col span={16}>
         <UpMenu type={type} logout={logout}/>
       </Col>
       <Col
         onClick={handleClick}
-        // offset={12}
+        span={4}
         style={{ textAlign: "right", cursor: "pointer", fontWeight: 700 }}
       >
         <span className="ant-dropdown-link">
@@ -66,7 +67,9 @@ const Nav = ({ type, setType, user, setUser, logout }) => {
           </span>
         </span>
       </Col>
+      <hr />
     </Row>
+    </strong>
   );
 };
 

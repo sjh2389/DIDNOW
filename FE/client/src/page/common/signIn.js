@@ -101,7 +101,7 @@ const SignIn = ({ type, setType, setUser }) => {
           <Col span={12} offset={7}>
             <div className="signin--right">
               <div className="signin--canvas">
-                <span className="signin--title">🔐 로그인</span>
+                <span className="signin--title">로그인</span>
                 <Radio.Group
                   defaultValue="holder"
                   buttonStyle="solid"

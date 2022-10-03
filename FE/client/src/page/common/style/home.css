@@ -1,6 +1,31 @@
-.home {
+.homePictureAndHomeStyle {
   padding: 5% 10%;
   height: calc(100vh - 174px);
+  background-image: url(./../../../img/homepage.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  
+}
+
+.issuerPictureAndHomeStyle {
+  padding: 5% 10%;
+  height: calc(100vh - 174px);
+  background-image: url(./../../../img/signin.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  
+}
+
+.verifierPictureAndHomeStyle {
+  padding: 5% 10%;
+  height: calc(100vh - 174px);
+  background-image: url(./../../../img/signup.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  
 }
 
 .home ul,
