@@ -13,7 +13,7 @@ import SignIn from "./page/common/signIn";
 import SignUp from "./page/common/signUp";
 import FooterBar from "./component/footerBar";
 import Mypage from "./page/common/mypage";
-import SideMenu from "page/common/sideMenu";
+//import SideMenu from "page/common/sideMenu";
 import NotFound from "./page/common/notFound";
 
 // holder
@@ -35,12 +35,12 @@ import Issuerstatus from "page/issuer/issuerstatus";
 import Verifierstatus from "page/verifier/verifierstatus";
 
 // config
-const { Header, Content, Footer, Sider } = Layout;
+const { Header, Content, Footer } = Layout;
 
 // main
 function App() {
   const [user, setUser] = useState({});
-  const [type, setType] = useState("");
+  const [type, setType] = useState("issuer");
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
@@ -86,16 +86,16 @@ function App() {
       <Layout>
         {location.pathname === "/" ? null : (
           <Header style={{ background: "white" }}>
-            <Nav type={type} setType={setType} user={user} setUser={setUser} />
+            <Nav type={type} setType={setType} user={user} setUser={setUser} logout={logout} />
           </Header>
         )}
         <Layout>
-          {/* issuer, verifier 화면에서만 사이드메뉴 렌더링 */}
-          {location.pathname === "/" ? null : (
+          {/* issuer, verifier 화면에서만 사이드메뉴 렌더링 -> 사이드메뉴 삭제 */}
+          {/* {location.pathname === "/" ? null : (
             <Sider style={{ background: "inherit" }} width={"15%"}>
               <SideMenu type={type} logout={logout} />
             </Sider>
-          )}
+          )} */}
           <Content>
             <Spin spinning={isLoading} size="large" tip="로딩중 ..">
               <Routes>

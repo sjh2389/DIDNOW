@@ -9,6 +9,7 @@ import {
 } from "@ant-design/icons";
 import "./style/nav.css";
 import { useEffect } from "react";
+import UpMenu from "../page/common/upMenu"
 
 /* 
   현재 에러가 있다고 나옵니다.
@@ -16,7 +17,7 @@ import { useEffect } from "react";
   items 배열로 렌더링 하도록 리팩토링 하겠습니다.
 */
 
-const Nav = ({ type, setType, user, setUser }) => {
+const Nav = ({ type, setType, user, setUser, logout }) => {
   useEffect(() => {});
 
   const handleClick = () => {
@@ -24,16 +25,18 @@ const Nav = ({ type, setType, user, setUser }) => {
   };
 
   return (
-    <Row>
-      <Col span={6}>
+    <Row style={{justifyContent: "space-between"}} gutter={24}>
+      <Col>
         <Link to="/home">
           <img src={logo} alt="" style={{ height: "64px" }} />
         </Link>
       </Col>
+      <Col>
+        <UpMenu type={type} logout={logout}/>
+      </Col>
       <Col
         onClick={handleClick}
-        span={5}
-        offset={12}
+        // offset={12}
         style={{ textAlign: "right", cursor: "pointer", fontWeight: 700 }}
       >
         <span className="ant-dropdown-link">

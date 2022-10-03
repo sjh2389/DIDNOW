@@ -159,6 +159,7 @@ const SideMenu = ({ type, logout }) => {
       : type === "verifier"
       ? [...homeItem, ...verifierItems, ...commonItems]
       : "";
+      console.log(items)
   return (
     <Menu style={{ height: "100%", padding: "20% 0 0 0" }} items={items} />
   );
