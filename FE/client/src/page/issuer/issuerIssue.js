@@ -59,8 +59,9 @@ const IssuerIssue = ({ user, type }) => {
           <Row className="issuerissue--row">
             <Col span={20} offset={2}>
               <div className="issuerissue--title">
-                [ {user.title} ] Verifier Credential 등록
+                [ {user.title} ]
               </div>
+              <p className="issuerissue--title">Verifier Credential 등록</p>
               <hr />
 
               <Row className="issuerissue--row">
@@ -83,7 +84,7 @@ const IssuerIssue = ({ user, type }) => {
               {vcInfo.length !== 0 ? (
                 <Row className="issuerissue--row">
                   <Col span={6}>
-                    <span className="issuerissue--sub--title">인증서 제목</span>
+                    <span className="issuerissue--sub--title">종류</span>
                   </Col>
                   <Col span={16}>
                     <span

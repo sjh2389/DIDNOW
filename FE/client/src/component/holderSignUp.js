@@ -124,7 +124,7 @@ const HolderSignUp = () => {
 
   return (
     <div>
-      <div className="holdersignup--title">🙋‍♀️ 개인 회원 가입</div>
+      <div className="holdersignup--title">개인 회원 가입</div>
       <div className="holdersignup--description">
         <div>개인 회원으로 가입 시 인증서를 직접 관리할 수 있고</div>
         <div>원하는 인증서를 제출하는 서비스를 제공받습니다.</div>
@@ -171,8 +171,8 @@ const HolderSignUp = () => {
         </Col>
       </Row>
       <Row className="holdersignup--row">
-        <Col span={6} style={{ display: "flex" }}>
-          <span className="signup--label">비밀번호 확인</span>
+        <Col span={6}>
+          <span className="signup--label">비밀번호</span><br/><span className="signup--label">확인</span>
         </Col>
         <Col span={18}>
           <input
@@ -241,7 +241,7 @@ const HolderSignUp = () => {
 
       <Row className="holdersignup--row">
         <Col span={6} style={{ display: "flex" }}>
-          <span className="signup--label">소속 기관</span>
+          <span className="signup--label">소속기관</span>
         </Col>
         <Col span={18}>
           <Select
@@ -263,8 +263,8 @@ const HolderSignUp = () => {
         </Col>
       </Row>
       <Row className="holdersignup--row">
-        <Col span={6} style={{ display: "flex" }}>
-          <span className="signup--label">KLIP 연결</span>
+        <Col span={6}>
+          <span className="signup--label">KLIP</span><br/><span className="signup--label">연결</span>
         </Col>
         <Col span={18}>
           <button

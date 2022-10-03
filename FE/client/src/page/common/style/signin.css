@@ -3,6 +3,11 @@
   height: 100vh;
   margin: 0 0 20vh 0;
 }
+.signin--location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .signin--left {
   width: 100%;

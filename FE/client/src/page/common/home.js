@@ -15,7 +15,7 @@ const Home = ({ isLoading, type }) => {
       >
         <Row gutter={20}>
           <Col
-            span={12}
+            //span={12}
             style={{
               display: "flex",
               justifyContent: "center",

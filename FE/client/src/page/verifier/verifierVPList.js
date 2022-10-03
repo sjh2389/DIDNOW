@@ -91,20 +91,21 @@ const VerifierVPList = () => {
           <Row className="verifiervplist--row">
             <Col span={20} offset={2}>
               <div className="verifiervplist--title">
-                [ {user.title || ""} ] Verifier Presentation 목록
+                [ {user.title || ""} ]
               </div>
+              <p className="verifiervplist--title">Verifier Presentation 목록</p>
               <hr />
               <Row className="holderissuerlist--row">
-                <Col span={2}>
+                <Col span={3}>
                   <span className="holderissuerlist--columns">번호</span>
                 </Col>
                 <Col span={4}>
                   <span className="holderissuerlist--columns">요청인</span>
                 </Col>
                 <Col span={4}>
-                  <span className="holderissuerlist--columns">인증서 제목</span>
+                  <span className="holderissuerlist--columns">종류</span>
                 </Col>
-                <Col span={7}>
+                <Col span={6}>
                   <span className="holderissuerlist--columns">VP id</span>
                 </Col>
                 <Col span={5}>

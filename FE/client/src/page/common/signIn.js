@@ -98,7 +98,7 @@ const SignIn = ({ type, setType, setUser }) => {
     <div className="signin">
       <Spin tip="로딩중..." size="large" spinning={isLoading}>
         <Row>
-          <Col span={12} offset={7}>
+          <Col span={14} offset={6}>
             <div className="signin--right">
               <div className="signin--canvas">
                 <span className="signin--title">로그인</span>
@@ -135,7 +135,7 @@ const SignIn = ({ type, setType, setUser }) => {
                   onKeyDown={isEnter}
                 />
                 <Row style={{ margin: "10px 0px" }}>
-                  <Col span={10} style={{ fontWeight: 700 }}>
+                  <Col style={{ fontWeight: 700 }}>
                     <Link to="/signup">회원이 아니신가요?</Link>
                   </Col>
                 </Row>

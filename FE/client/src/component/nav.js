@@ -1,4 +1,5 @@
 import logo from "../img/didnow.png";
+import icon from "../img/didnow-icon-home.png";
 import { Link } from "react-router-dom";
 import { Row, Col, Avatar } from "antd";
 import {
@@ -10,6 +11,7 @@ import {
 import "./style/nav.css";
 import { useEffect } from "react";
 import UpMenu from "./upMenu"
+import { useMediaQuery } from "react-responsive";
 
 /* 
   현재 에러가 있다고 나옵니다.
@@ -23,13 +25,16 @@ const Nav = ({ type, setType, user, setUser, logout }) => {
   const handleClick = () => {
     window.location.href = "/signin";
   };
+  const isBigScreen = useMediaQuery({minWidth: 1100})
 
   return (
     <strong>
       <Row style={{justifyContent: "space-between"}} gutter={24}>
       <Col span={4}>
         <Link to="/home">
+          {isBigScreen ?
           <img src={logo} alt="" style={{ height: "64px" }} />
+          : <img src={icon} alt="" style={{ height: "64px" }} />}
         </Link>
       </Col>
       <Col span={16}>
@@ -60,7 +65,7 @@ const Nav = ({ type, setType, user, setUser, logout }) => {
           )}
           <span style={{ margin: "0 0 0 5px" }}>
             {type === ""
-              ? "Guest"
+              ? null
               : type === "holder"
               ? user?.username
               : user?.title}

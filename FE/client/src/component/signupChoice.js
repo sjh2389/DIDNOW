@@ -5,7 +5,7 @@ import {
   SafetyOutlined,
   ShopOutlined,
 } from "@ant-design/icons";
-const SingUpChoice = ({ way, setWay }) => {
+const SignUpChoice = ({ way, setWay }) => {
   const choice = (e) => {
     setWay(e.currentTarget.id);
   };
@@ -25,7 +25,7 @@ const SingUpChoice = ({ way, setWay }) => {
           >
             {way === "" ? <UserOutlined /> : <SafetyOutlined />}
             <div className="signup--choicetype--title">
-              {way === "" ? "개인회원" : "발행자"} 가입하기
+              {way === "" ? "개인회원" : "발행자"}
             </div>
           </div>
         </Col>
@@ -37,7 +37,7 @@ const SingUpChoice = ({ way, setWay }) => {
           >
             {way === "" ? <BankOutlined /> : <ShopOutlined />}
             <div className="signup--choicetype--title">
-              {way === "" ? "기업회원" : "검증자"} 가입하기
+              {way === "" ? "기업회원" : "검증자"}
             </div>
           </div>
         </Col>
@@ -46,4 +46,4 @@ const SingUpChoice = ({ way, setWay }) => {
   );
 };
 
-export default SingUpChoice;
+export default SignUpChoice;

@@ -2,7 +2,7 @@ import { Row, Col } from "antd";
 import "./style/signUp.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import SingUpChoice from "../../component/signupChoice";
+import SignUpChoice from "../../component/signupChoice";
 import HolderSignUp from "../../component/holderSignUp";
 import IssuerSignUp from "../../component/issuerSignUp";
 import VerifierSignUp from "../../component/verifierSignUp";
@@ -21,7 +21,7 @@ const SignUp = ({ user }) => {
 
   let renderByWay = "";
   if (way === "" || way === "company") {
-    renderByWay = <SingUpChoice way={way} setWay={setWay} />;
+    renderByWay = <SignUpChoice way={way} setWay={setWay} />;
   } else if (way === "holder") {
     renderByWay = <HolderSignUp />;
   } else if (way === "issuer") {

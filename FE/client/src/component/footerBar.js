@@ -35,12 +35,12 @@ const FooterBar = () => {
   };
   return (
     <Row className="footer--wrapper">
-      <Col span={4}>
+      <Col className="col--margin">
         <Link to="/">
           <img src={icon} alt="" className="footer--logo" />
         </Link>
       </Col>
-      <Col span={4}>
+      <Col className="col--margin">
         <div className="footer--subtitle">
           <Link to="/">DIDNOW</Link>
         </div>
@@ -61,16 +61,16 @@ const FooterBar = () => {
           TEAM
         </div>
       </Col>
-      <Col span={4}>
+      <Col className="col--margin">
         <div className="footer--subtitle">TERMS</div>
       </Col>
-      <Col span={4}>
+      <Col className="col--margin">
         <div className="footer--subtitle">SERVICE</div>
         <div className="footer--menu">APIs</div>
         <div className="footer--menu">DATA</div>
       </Col>
-      <Col span={4}></Col>
-      <Col span={4}>
+      
+      <Col className="col--margin">
         <div className="footer--menu">Copyright2022.</div>
         <div className="footer--menu">DIDNOW All rights reserved.</div>
       </Col>

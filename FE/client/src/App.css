@@ -2,6 +2,10 @@ main {
   background-color: white !important;
 }
 
+.footbar {
+  background-color: rgb(62, 62, 62) !important;
+}
+
 .font--red {
   color: rgb(255, 93, 93);
 }

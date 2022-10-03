@@ -81,7 +81,7 @@ const VerifierSignUp = () => {
 
   return (
     <div>
-      <div className="verifiersignup--title">🧐 검증자 회원 가입</div>
+      <div className="verifiersignup--title">검증자 회원 가입</div>
       <div className="verifiersignup--description">
         <div>검증자 회원으로 가입하는 기관 고객분들은</div>
         <div>회원들이 제출한 인증서를 검증할 수 있습니다.</div>
@@ -130,7 +130,7 @@ const VerifierSignUp = () => {
 
       <Row className="verifiersignup--row">
         <Col span={6}>
-          <span className="signup--label">비밀번호 확인</span>
+          <span className="signup--label">비밀번호</span><p className="signup--label">확인</p>
         </Col>
         <Col span={18}>
           <input
@@ -172,7 +172,7 @@ const VerifierSignUp = () => {
       </Row>
       <Row className="verifiersignup--row">
         <Col span={6}>
-          <span className="signup--label">필수 인증내용</span>
+          <span className="signup--label">필수</span><p className="signup--label">인증내용</p>
         </Col>
         <Col span={18}>
           <Select

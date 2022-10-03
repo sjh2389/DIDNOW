@@ -95,7 +95,7 @@ const IssuerSignUp = () => {
   };
   return (
     <div>
-      <div className="issuersignup--title">📝 발행자 회원 가입</div>
+      <div className="issuersignup--title">발행자 회원 가입</div>
       <div className="issuersignup--description">
         <div>발행자 회원으로 가입하는 기관 고객분들은</div>
         <div>
@@ -146,7 +146,7 @@ const IssuerSignUp = () => {
       </Row>
       <Row className="issuersignup--row">
         <Col span={6} className="signup--col">
-          비밀번호 확인
+          비밀번호<p>확인</p>
         </Col>
         <Col span={18}>
           <input
@@ -189,7 +189,7 @@ const IssuerSignUp = () => {
       </Row>
       <Row className="issuersignup--row">
         <Col span={6} className="signup--col">
-          사업자 등록번호
+          사업자<p>등록번호</p>
         </Col>
         <Col span={18}>
           <input
@@ -207,7 +207,7 @@ const IssuerSignUp = () => {
       </Row>
       <Row className="issuersignup--row">
         <Col span={6} className="signup--col">
-          필수 요구사항
+          필수<p>요구사항</p>
         </Col>
         <Col span={18}>
           <Select
@@ -253,8 +253,8 @@ const IssuerSignUp = () => {
         </Col>
       </Row>
       <Row className="holdersignup--row">
-        <Col span={6} style={{ display: "flex" }}>
-          <span className="signup--label">KLIP 연결</span>
+        <Col span={6}>
+          <span className="signup--label">KLIP</span><p className="signup--label">연결</p>
         </Col>
         <Col span={18}>
           <button

@@ -4,6 +4,10 @@
   margin: 0 0 20vh 0;
 }
 
+.holderissuerlist--columns {
+  font-size: 1rem;
+}
+
 .holderissue--regist {
   border-radius: 30px;
   width: 200px;

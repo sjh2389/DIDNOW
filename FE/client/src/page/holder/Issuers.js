@@ -68,6 +68,7 @@ const Issuers = () => {
                 <Col span={2} offset={2}>
                   <span className="holderissuerlist--columns">번호</span>
                 </Col>
+                <Col span={2}></Col>
                 <Col span={7}>
                   <span className="holderissuerlist--columns">기관명</span>
                 </Col>

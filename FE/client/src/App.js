@@ -40,7 +40,7 @@ const { Header, Content, Footer } = Layout;
 // main
 function App() {
   const [user, setUser] = useState({});
-  const [type, setType] = useState("issuer");
+  const [type, setType] = useState("");
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
@@ -90,12 +90,6 @@ function App() {
           </Header>
         )}
         <Layout>
-          {/* issuer, verifier 화면에서만 사이드메뉴 렌더링 -> 사이드메뉴 삭제 */}
-          {/* {location.pathname === "/" ? null : (
-            <Sider style={{ background: "inherit" }} width={"15%"}>
-              <SideMenu type={type} logout={logout} />
-            </Sider>
-          )} */}
           <Content>
             <Spin spinning={isLoading} size="large" tip="로딩중 ..">
               <Routes>

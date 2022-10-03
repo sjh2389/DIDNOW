@@ -1,4 +1,5 @@
 import "../verifier/style/verifiervplist.css";
+//import "./style/holderIssue.css"
 import { Row, Col, Breadcrumb, message, Spin, Pagination } from "antd";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -80,16 +81,16 @@ const HolderVPList = () => {
               </div>
               <hr />
               <Row className="holderissuerlist--row">
-                <Col span={2}>
+                <Col span={3}>
                   <span className="holderissuerlist--columns">번호</span>
                 </Col>
                 <Col span={4}>
-                  <span className="holderissuerlist--columns">신청 기관</span>
+                  <span className="holderissuerlist--columns">기관</span>
                 </Col>
                 <Col span={4}>
-                  <span className="holderissuerlist--columns">인증서 제목</span>
+                  <span className="holderissuerlist--columns">종류</span>
                 </Col>
-                <Col span={7}>
+                <Col span={6}>
                   <span className="holderissuerlist--columns">VP id</span>
                 </Col>
                 <Col span={5}>
