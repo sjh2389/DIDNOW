@@ -1,14 +1,17 @@
-import { Breadcrumb, Row, Col, message, Select, Spin } from "antd";
-import { useState, useEffect } from "react";
+import { Breadcrumb, Row, Col, message, Select, Spin, Modal } from "antd";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import * as XLSX from "xlsx"
 import "./style/issuerissue.css";
 
 const { Option } = Select;
 const IssuerIssue = ({ user, type }) => {
   const [vcInfo, setVcInfo] = useState({});
   const [vcTitle, setVcTitle] = useState("");
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
+  const [fileName, setFileName] = useState("")
+  const [modalOpen, setModalOpen] = useState(false);
   const navigate = useNavigate();
   const onchange = (e) => {
     setVcTitle(e);
@@ -36,17 +39,43 @@ const IssuerIssue = ({ user, type }) => {
   };
 
   const vcList = ["졸업증명서", "출입국증명서", "성인인증서", "수료증", "All"];
-  useEffect(() => {
-    axios({
-      url: `${process.env.REACT_APP_ISSUER}/iss/api/v1/verifiable-credential`,
-      method: "GET",
-      withCredentials: true,
-    }).then((result) => {
-      setVcInfo(result.data);
-      setIsLoading(false);
-    });
-  }, []);
-  useEffect(() => {}, []);
+  
+  // 백엔드와 통신하는 부분
+  // useEffect(() => {
+  //   axios({
+  //     url: `${process.env.REACT_APP_ISSUER}/iss/api/v1/verifiable-credential`,
+  //     method: "GET",
+  //     withCredentials: true,
+  //   }).then((result) => {
+  //     setVcInfo(result.data);
+  //     setIsLoading(false);
+  //   });
+  // }, []);
+
+  function readExcel(event) {
+    try {
+      const input = event.target;
+      setFileName(event.target.files[0].name)
+      const reader = new FileReader();
+      reader.onload = function () {
+          const data = reader.result;
+          let workBook = XLSX.read(data, { type: 'binary' });
+          workBook.SheetNames.forEach((sheetName) => {
+              console.log('SheetName: ' + sheetName);
+              let rows = XLSX.utils.sheet_to_json(workBook.Sheets[sheetName]);
+              console.log(JSON.stringify(rows));
+          })
+      }
+      reader.readAsBinaryString(input.files[0]);
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  const handleCancel = () => {
+    setModalOpen(false);
+  };
+
   return (
     <div className="issuerissue">
       <Breadcrumb className="issuerissue--breadcrumb" separator=">">
@@ -81,7 +110,7 @@ const IssuerIssue = ({ user, type }) => {
                 <Col span={2}></Col>
               </Row>
 
-              {vcInfo.length !== 0 ? (
+              {vcInfo.length !== undefined ? (
                 <Row className="issuerissue--row">
                   <Col span={6}>
                     <span className="issuerissue--sub--title">종류</span>
@@ -105,7 +134,7 @@ const IssuerIssue = ({ user, type }) => {
                     </Col>
                     <Col span={16}>
                       <Select
-                        style={{ width: "50%", height: "100%" }}
+                        style={{ width: "50%", height: "100%"}}
                         placeholder="발급하실 인증서를 선택해주세요."
                         onChange={onchange}
                       >
@@ -114,12 +143,40 @@ const IssuerIssue = ({ user, type }) => {
                         })}
                       </Select>
                     </Col>
-                    <Col span={2}></Col>
+                    <Col span={2} />
                   </Row>
+                  <Row className="issuerissue--row">
+                    <Col span={6}>
+                      <span className="issuerissue--sub--title">
+                        Excel 업로드
+                      </span>
+                    </Col>
+                    <Col span={16}>
+                      <label 
+                      htmlFor="getExcelFile"
+                      className="issuerissue--submit--excel">
+                        {fileName === "" ? "파일첨부" : fileName}
+                      </label>
+                      <input 
+                      id="getExcelFile"
+                      style={{display: "none"}}
+                      type="file"
+                      accept=".xlsx, .xls"
+                      onChange={(e) => {
+                        console.log(e)
+                        readExcel(e)
+                      }}>
+                      </input>
+                      <button 
+                        className="excel--formInfo"
+                        onClick={() => setModalOpen(true)}
+                      >?</button>
+                    </Col> 
+                  </Row>                
 
                   <hr />
                   <Row className="issuerissue--sumbit--wrapper">
-                    <Col span={6} offset={9}>
+                    <Col>
                       <button
                         className="issuerissue--submit"
                         onClick={submitVc}
@@ -134,6 +191,15 @@ const IssuerIssue = ({ user, type }) => {
           </Row>
         </Spin>
       </div>
+      <Modal
+        title="Excel파일 양식"
+        width={"50%"}
+        open={modalOpen}
+        onCancel={handleCancel}
+        footer={[]}
+      >
+        
+      </Modal>
     </div>
   );
 };

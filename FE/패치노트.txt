@@ -1,0 +1,5 @@
+PE 1.1 : lunch 페이지 반응형으로 수정
+PE 1.2.1 : sideMenu, navMenu 병합
+PE 1.2.2 : home 이미지, background로 이동
+PE 1.3.1 : 회원가입 창 반응형으로 수정, holder,verifier page 교정, footerbar 버그수정
+PE 1.4.1 : xlsx 파일 읽기 기능 추가완료 , 데이터 처리부분 작업 미완료

@@ -40,7 +40,7 @@ const { Header, Content, Footer } = Layout;
 // main
 function App() {
   const [user, setUser] = useState({});
-  const [type, setType] = useState("");
+  const [type, setType] = useState("issuer");
   const [isLoading, setIsLoading] = useState(true);
   const location = useLocation();
 
